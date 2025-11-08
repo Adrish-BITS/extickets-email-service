@@ -20,7 +20,12 @@ public class EmailController {
 	
 	@PostMapping("/sendEmail")
     public ResponseEntity<String> sendEmail(@RequestBody EmailRequest request) {
-        emailService.sendEmail(request.getTo(), request.getSubject(), request.getBody());
-        return ResponseEntity.ok("Email sent successfully!");
+		try {
+            emailService.sendEmail(request.getTo(), request.getSubject(), request.getBody());
+            return ResponseEntity.ok("Email sent successfully!");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Failed to send email: " + e.getMessage());
+        }
     }
 }

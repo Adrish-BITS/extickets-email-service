@@ -6,6 +6,9 @@ public class TicketWithStatus extends Ticket{
 
 	private String status;
 	private LocalDateTime updatedAt;
+	public TicketWithStatus(String string, LocalDateTime now) {
+		// TODO Auto-generated constructor stub
+	}
 	public String getStatus() {
 		return status;
 	}

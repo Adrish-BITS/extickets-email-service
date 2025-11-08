@@ -8,11 +8,11 @@ public class EmailRequest {
     // Constructors
     public EmailRequest() {}
     
-    public EmailRequest(String to, String subject, String body) {
-        this.to = to;
-        this.subject = subject;
-        this.body = body;
-    }
+//    public EmailRequest(String to, String subject, String body) {
+//        this.to = to;
+//        this.subject = subject;
+//        this.body = body;
+//    }
 
     // Getters and setters
     public String getTo() { return to; }
